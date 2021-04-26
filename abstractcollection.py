@@ -1,6 +1,6 @@
 """
 File: abstractcollection.py
-Author: Ken Lambert
+Author: YOUR NAME GOES HERE
 """
 
 class AbstractCollection(object):
@@ -16,21 +16,20 @@ class AbstractCollection(object):
                 self.add(item)
 
     # Accessor methods
-    def isEmpty(self):
-        """Returns True if len(self) == 0, or False otherwise."""
-        return len(self) == 0
-    
     def __len__(self):
-        """Returns the number of items in self."""
+        """-> The number of items in self."""
         return self._size
+
+    def isEmpty(self):
+        return len(self) == 0
 
     def __str__(self):
         """Returns the string representation of self."""
         return "[" + ", ".join(map(str, self)) + "]"
 
     def __add__(self, other):
-        """Returns a new bag containing the contents
-        of self and other."""
+        """Returns a new collection consisting of the
+        items in self and other."""
         result = type(self)(self)
         for item in other:
             result.add(item)
